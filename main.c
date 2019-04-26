@@ -242,10 +242,19 @@ int			main(void)
 	// printf("Sub-string  > %s\n",s2);
 
 	//==================  ft_strjoin TEST ======================
-	char s1[] = "aymane ";
-	char s2[] = "is amazing";
-	char *result = ft_strjoin(s1,s2);
-	printf("Joined Strings :::> %s\n",result);
+	// char s1[] = "aymane ";
+	// char s2[] = "is amazing";
+	// char *result = ft_strjoin(s1,s2);
+	// printf("Joined Strings :::> %s\n",result);
+
+
+	//==================  ft_strtrim TEST ======================
+	// char s[] = "   \t Aymane is awesome   .     \n\t";
+	// char *result = ft_strtrim(s);
+	// printf("result:====> |%s|",result);
+
+
+
 
 
 
