@@ -9,8 +9,8 @@
 
 
 // //==================  ft_striteri Parameter TEST ======================
-// this is a cripto algorithm that shift the char                     |
-// with its index in the string                                       |
+// this is a cripto algorithm that shift the char                        |
+// with its index in the string                                          |
 // void		shift_index(unsigned int i, char *s)
 // {
 // 	*s += i;
@@ -22,8 +22,19 @@
 // {
 // 	char ret;
 // 	ret = c + 1;
+// 	return(ret);
 // }
 
+
+// //==================  ft_strmapi Parameter TEST ======================
+// this is a cripto algorithm that shift the char                       |
+// with its index in the string                                         |
+// char	mapi_shift(unsigned int i,char c)
+// {
+// 	char ret;
+// 	ret = c + i;
+// 	return (ret);
+// }
 
 
 
@@ -203,7 +214,25 @@ int			main(void)
 	// char *fresh = ft_strmap(s,&map_shift);
 	// printf("after mapping  : >%s\n",fresh);
 
+	//==================  ft_strmapi TEST ======================
+	// char s[] = "abc";
+	// printf("before mapping : >%s\n",s);
+	// char *fresh = ft_strmapi(s,&mapi_shift);
+	// printf("after mapping  : >%s\n",fresh);
 
+	//==================  ft_strequ TEST ======================
+	// char s[10] = "aymane";
+	// char s2[10] = "aymane";
+	// printf("identical        > %d\n", ft_strequ(s,s2));
+	// s[3] = 'm';
+	// printf("not idenical     > %d\n", ft_strequ(s,s2));
+
+	//==================  ft_strnequ TEST ======================
+	char s[10] = "aymane";
+	char s2[10] = "aymane";
+	printf("identical        > %d\n", ft_strnequ(s,s2,4));
+	s[3] = 'm';
+	printf("not idenical     > %d\n", ft_strnequ(s,s2,4));
 
 	return (0);
 }
