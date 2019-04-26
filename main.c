@@ -228,11 +228,18 @@ int			main(void)
 	// printf("not idenical     > %d\n", ft_strequ(s,s2));
 
 	//==================  ft_strnequ TEST ======================
-	char s[10] = "aymane";
-	char s2[10] = "aymane";
-	printf("identical        > %d\n", ft_strnequ(s,s2,4));
-	s[3] = 'm';
-	printf("not idenical     > %d\n", ft_strnequ(s,s2,4));
+	// char s[10] = "aymane";
+	// char s2[10] = "aymane";
+	// printf("identical        > %d\n", ft_strnequ(s,s2,4));
+	// s[3] = 'm';
+	// printf("not idenical     > %d\n", ft_strnequ(s,s2,4));
 
-	return (0);
+
+	//==================  ft_strsub TEST ======================
+	// char s[] = "aymane";
+	// char *s2 = ft_strsub(s,0,2);
+	// printf("String      > %s\n",s);
+	// printf("Sub-string  > %s\n",s2);
+
+	// return (0);
 }
