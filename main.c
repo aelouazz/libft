@@ -241,5 +241,14 @@ int			main(void)
 	// printf("String      > %s\n",s);
 	// printf("Sub-string  > %s\n",s2);
 
-	// return (0);
+	//==================  ft_strjoin TEST ======================
+	char s1[] = "aymane ";
+	char s2[] = "is amazing";
+	char *result = ft_strjoin(s1,s2);
+	printf("Joined Strings :::> %s\n",result);
+
+
+
+
+	return (0);
 }
