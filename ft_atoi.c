@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 03:36:40 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/25 01:08:47 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/04/17 16:11:26 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/04/26 00:57:51 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,29 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** copies n bytes from memory area @src to memory area @dst.  If @dst and @src |
-** overlap, behavior is undefined. Applications in which @dst and @src overlap |
-** should use ft_memmove instead.                                              |
+** converts ASCII to INT eleminating white space at the start                  |
+** @RET: the INT extracted from @str by the conversion                         |
 ** -----------------------------------------------------------------------------
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int				ft_atoi(const char *str)
 {
-	unsigned char *a;
-	unsigned char *b;
+	int			res;
+	int			negative;
 
-	a = (unsigned char *)src;
-	b = (unsigned char *)dest;
-	while (n-- > 0)
-		*(b++) = *(a++);
-	return (dest);
+	negative = 1;
+	res = 0;
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
+					*str == '\v' || *str == '\f' || *str == '\r'))
+		++str;
+	if (*str == '-')
+		negative = -1;
+	if (*str == '-' || *str == '+')
+		++str;
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - 48);
+		++str;
+	}
+	return (res * negative);
 }

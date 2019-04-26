@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 03:36:40 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/25 01:08:47 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/04/16 17:47:18 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/04/25 23:46:13 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** copies n bytes from memory area @src to memory area @dst.  If @dst and @src |
-** overlap, behavior is undefined. Applications in which @dst and @src overlap |
-** should use ft_memmove instead.                                              |
+** @RET: the address of the first occurence of @c in @s if it exists in it     |
 ** -----------------------------------------------------------------------------
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char *a;
-	unsigned char *b;
+	char *src;
 
-	a = (unsigned char *)src;
-	b = (unsigned char *)dest;
-	while (n-- > 0)
-		*(b++) = *(a++);
-	return (dest);
+	src = (char*)s;
+	while (*src)
+	{
+		if (*src == c)
+			return (src);
+		++src;
+	}
+	if (c == 0)
+		return (src);
+	return (0);
 }

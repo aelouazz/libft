@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 03:36:40 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/25 01:08:47 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/04/21 17:31:52 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/04/21 18:53:22 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,24 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** copies n bytes from memory area @src to memory area @dst.  If @dst and @src |
-** overlap, behavior is undefined. Applications in which @dst and @src overlap |
-** should use ft_memmove instead.                                              |
+** @s: The string to map                                                       |
+** @f: The function to apply to each character of s with its index             |
+** @fresh: The “fresh” string created from the successive applications of f    |
 ** -----------------------------------------------------------------------------
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char *a;
-	unsigned char *b;
+	unsigned int	i;
+	char			*result;
 
-	a = (unsigned char *)src;
-	b = (unsigned char *)dest;
-	while (n-- > 0)
-		*(b++) = *(a++);
-	return (dest);
+	if (!s || !(result = ft_memalloc((size_t)ft_strlen((char *)s) + 1)))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		++i;
+	}
+	return (result);
 }

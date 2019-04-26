@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 03:36:40 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/25 01:08:47 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/04/21 19:17:29 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/04/21 19:31:41 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,15 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** copies n bytes from memory area @src to memory area @dst.  If @dst and @src |
-** overlap, behavior is undefined. Applications in which @dst and @src overlap |
-** should use ft_memmove instead.                                              |
+** @n: the maximum number of chars to be compared                              |
 ** -----------------------------------------------------------------------------
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int			ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	unsigned char *a;
-	unsigned char *b;
-
-	a = (unsigned char *)src;
-	b = (unsigned char *)dest;
-	while (n-- > 0)
-		*(b++) = *(a++);
-	return (dest);
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strncmp(s1, s2, n) == 0)
+		return (1);
+	return (0);
 }

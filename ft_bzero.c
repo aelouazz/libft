@@ -6,11 +6,17 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 14:58:17 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/14 16:00:28 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/04/25 02:20:54 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** -----------------------------------------------------------------------------
+** Writes @n zero bytes to the string @s. If @n==0 , it does nothing           |
+** -----------------------------------------------------------------------------
+*/
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -19,6 +25,6 @@ void	ft_bzero(void *s, size_t n)
 	temp = (unsigned char*)s;
 	if (n == (size_t)0)
 		return ;
-	while (n-- > 0)
+	while (n-- > (size_t)0)
 		*(temp++) = 0;
 }

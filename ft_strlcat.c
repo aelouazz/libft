@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 03:46:45 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/25 02:25:02 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/04/16 17:12:29 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/04/25 23:44:43 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,28 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** copy from @src to @dest until it finds the char @c (included) or it hits @n |
-** @ret: =(&c + 1) if @c is found else (NULL)                                  |
+** @size: supposed total bytes of the resulting string                         |
+** Append untill @size is hit OR @src ends                                     |
+** @ret: the len of the resulting string                                       |
 ** -----------------------------------------------------------------------------
 */
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned char *desty;
-	unsigned char *srcy;
+	size_t	count_dest;
+	size_t	i;
+	size_t	res;
 
-	desty = (unsigned char*)dest;
-	srcy = (unsigned char*)src;
-	while (n-- > 0)
+	count_dest = ft_strlen(dst);
+	res = ft_strlen(src);
+	(size <= count_dest) ? (res += size) : (res += count_dest);
+	i = 0;
+	while (src[i] && count_dest + 1 < size)
 	{
-		*(desty++) = *srcy;
-		if (*(srcy++) == (unsigned char)c)
-			return ((void*)(desty));
+		dst[count_dest] = src[i];
+		count_dest++;
+		i++;
 	}
-	return (NULL);
+	dst[count_dest] = 0;
+	return (res);
 }

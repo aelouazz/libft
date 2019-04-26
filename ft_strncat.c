@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/02 03:36:40 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/25 01:08:47 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/04/16 15:06:06 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/04/25 23:25:01 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** copies n bytes from memory area @src to memory area @dst.  If @dst and @src |
-** overlap, behavior is undefined. Applications in which @dst and @src overlap |
-** should use ft_memmove instead.                                              |
+** Append @s2 to the end of @s1     (untill @n is reached)    then adds '\0'   |
 ** -----------------------------------------------------------------------------
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char		*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	unsigned char *a;
-	unsigned char *b;
+	int		i;
+	size_t	j;
 
-	a = (unsigned char *)src;
-	b = (unsigned char *)dest;
-	while (n-- > 0)
-		*(b++) = *(a++);
-	return (dest);
+	i = 0;
+	while (s1[i])
+		i++;
+	j = 0;
+	while (s2[j] && j < n)
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }

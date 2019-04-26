@@ -6,7 +6,7 @@
 #    By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 02:09:28 by aelouazz          #+#    #+#              #
-#    Updated: 2019/04/14 16:41:56 by aelouazz         ###   ########.fr        #
+#    Updated: 2019/04/26 01:33:40 by aelouazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,10 +29,13 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
 
 test:
-	gcc -Wall -Werror -Wextra main.c ft_memccpy.c
+	gcc -g main.c -o test -L. -lft
 
 del:
-	rm a.out
+	rm test
+	rm -rf test.dSYM
+
+retest: del test
