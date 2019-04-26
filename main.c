@@ -11,13 +11,18 @@
 // //==================  ft_striteri Parameter TEST ======================
 // this is a cripto algorithm that shift the char                     |
 // with its index in the string                                       |
-void		shift_index(unsigned int i, char *s)
-{
-	*s += i;
-}
+// void		shift_index(unsigned int i, char *s)
+// {
+// 	*s += i;
+// }
 
 
-
+// //==================  ft_strmap Parameter TEST ======================
+// char	map_shift(char c)
+// {
+// 	char ret;
+// 	ret = c + 1;
+// }
 
 
 
@@ -186,12 +191,17 @@ int			main(void)
 	// printf("before iterating: >%s\n",s);
 	// return (0);
 
-	//==================  ft_striter TEST ======================
-	char s[] = "abc";
-	printf("before iterating: >%s\n",s);
-	ft_striteri(s,&shift_index);
-	printf("before iterating: >%s\n",s);
+	//==================  ft_striteri TEST ======================
+	// char s[] = "abc";
+	// printf("before iterating: >%s\n",s);
+	// ft_striteri(s,&shift_index);
+	// printf("after iterating : >%s\n",s);
 
+	//==================  ft_strmap TEST ======================
+	// char s[] = "abc";
+	// printf("before mapping : >%s\n",s);
+	// char *fresh = ft_strmap(s,&map_shift);
+	// printf("after mapping  : >%s\n",fresh);
 
 
 
