@@ -9,12 +9,12 @@
 
 
 // //==================  ft_striteri Parameter TEST ======================
-// // this is a cripto algorithm that shift the char                     |
-// // with its index in the string                                       |
-// void		shift_index(unsigned int i, char *s)
-// {
-// 	*s += i;
-// }
+// this is a cripto algorithm that shift the char                     |
+// with its index in the string                                       |
+void		shift_index(unsigned int i, char *s)
+{
+	*s += i;
+}
 
 
 
@@ -186,12 +186,14 @@ int			main(void)
 	// printf("before iterating: >%s\n",s);
 	// return (0);
 
-	// //==================  ft_striter TEST ======================
-	// char s[] = "abc";
-	// printf("before iterating: >%s\n",s);
-	// ft_striteri(s,&shift_index);
-	// printf("before iterating: >%s\n",s);
-	// return (0);
+	//==================  ft_striter TEST ======================
+	char s[] = "abc";
+	printf("before iterating: >%s\n",s);
+	ft_striteri(s,&shift_index);
+	printf("before iterating: >%s\n",s);
 
 
+
+
+	return (0);
 }
