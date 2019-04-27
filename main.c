@@ -254,6 +254,10 @@ int			main(void)
 	// printf("result:====> |%s|",result);
 
 
+	//==================  ft_itoa TEST ======================
+	// char *s = ft_itoa(-3333333);
+	// printf("Result ===> |%s|",s);
+
 
 
 

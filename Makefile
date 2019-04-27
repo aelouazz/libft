@@ -6,7 +6,7 @@
 #    By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 02:09:28 by aelouazz          #+#    #+#              #
-#    Updated: 2019/04/26 01:33:40 by aelouazz         ###   ########.fr        #
+#    Updated: 2019/04/27 01:17:39 by aelouazz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,9 @@ fclean: clean
 re: fclean $(NAME)
 
 test:
-	gcc -g main.c -o test -L. -lft
+	gcc main.c -o test -L. -lft
 
 del:
-	rm test
-	rm -rf test.dSYM
+	rm -rf test
 
 retest: del test
