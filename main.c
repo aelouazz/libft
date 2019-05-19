@@ -253,6 +253,13 @@ int			main(void)
 	// char *result = ft_strtrim(s);
 	// printf("result:====> |%s|",result);
 
+	//==================  ft_strsplit TEST ======================
+	char s1[] = "  Hello        World   Test  ";
+	char **result = ft_strsplit(s1,' ');
+	printf("result:====> |%s|\n",result[0]);
+	printf("result:====> |%s|\n",result[1]);
+	printf("result:====> |%s|\n",result[2]);
+
 
 	//==================  ft_itoa TEST ======================
 	// char *s = ft_itoa(-3333333);

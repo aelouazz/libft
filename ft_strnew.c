@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/20 21:45:46 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/04/26 01:14:46 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/18 04:14:54 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char		*ft_strnew(size_t size)
 	if (!(string = (char*)ft_memalloc(size + 1)))
 		return (NULL);
 	i = 0;
-	while (i < size)
+	while (i <= size)
 		string[i++] = '\0';
 	return (string);
 }
