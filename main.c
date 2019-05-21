@@ -286,13 +286,16 @@ int			main(void)
 
 
 	//==================  ft_lstdelone TEST ======================
-	char test[] = "aymane";
-	t_list *node = ft_lstnew((void const *)test,strlen(test) + 1);
-	t_list **alst = &node;
-	printf("content = %s\nsize = %zu\n-----------\n",node->content , node->content_size);
-	ft_lstdelone(alst, &del);
-	//this one will seg because the pointed area is freed:
-	printf("content = %s\nsize = %zu\n-----------\n",node->content , node->content_size);
+	// char test[] = "aymane";
+	// t_list *node = ft_lstnew((void const *)test,strlen(test) + 1);
+	// t_list **alst = &node;
+	// printf("content = %s\nsize = %zu\n-----------\n",node->content , node->content_size);
+	// ft_lstdelone(alst, &del);
+	// //this one will seg because the pointed area is freed:
+	// printf("content = %s\nsize = %zu\n-----------\n",node->content , node->content_size);
+
+
+
 
 
 
