@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 04:06:03 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/22 01:48:36 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/05/22 01:55:37 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/05/22 02:09:58 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,12 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** clears all the linked list after applying @del to them                      |
+** Adds the element @new at the beginning of the list                          |
 ** -----------------------------------------------------------------------------
 */
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list *next;
-
-	while ((*alst))
-	{
-		next = (*alst)->next;
-		ft_lstdelone(alst, del);
-		*alst = next;
-	}
-	*alst = NULL;
+	new->next = *alst;
+	*alst = new;
 }

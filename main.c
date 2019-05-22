@@ -297,6 +297,37 @@ int			main(void)
 
 
 
+	//==================  ft_lstdel TEST ======================
+	// char test[] = "aymane";
+	// char test2[] = "aelouazz";
+
+	// t_list *node1 = ft_lstnew((void const *)test,strlen(test) + 1);
+	// t_list *node2 = ft_lstnew((void const *)test2,strlen(test2) + 1);
+	// node1->next = node2;
+	// t_list **alst = &node1;
+	// printf("content1 = %s\nsize1 = %zu\n-----------\n",node1->content , node1->content_size);
+	// printf("content2 = %s\nsize2 = %zu\n-----------\n",node2->content , node2->content_size);
+	// ft_lstdel(alst, &del);
+	// //these will seg because the pointed area is freed:
+	// printf("content1 = %s\nsize1 = %zu\n-----------\n",node1->content , node1->content_size);
+
+
+
+
+	//==================  ft_lstadd TEST ======================
+	char test[] = "aymane";
+	char test2[] = "aelouazz";
+
+	t_list *node1 = ft_lstnew((void const *)test,strlen(test) + 1);
+	t_list *node2 = ft_lstnew((void const *)test2,strlen(test2) + 1);
+	t_list **alst = &node1;
+	printf("///////////   BEFORE //////////////////\n");
+	printf("content1 = %s\nsize1 = %zu\n-----------\n",(*alst)->content , (*alst)->content_size);
+	printf("addresse of next = %p\n-----------\n\n",(*alst)->next);
+	ft_lstadd(alst, node2);
+	printf("///////////   AFTER ///////////////////\n");
+	printf("content1 = %s\nsize1 = %zu\n-----------\n",(*alst)->content , (*alst)->content_size);
+	printf("addresse of next = %p\n-----------\n",(*alst)->next);
 
 
 
