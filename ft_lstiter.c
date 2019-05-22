@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 04:06:03 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/22 02:55:39 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/05/22 02:44:29 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/05/22 04:58:04 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** clears all the linked list after applying @del to them                      |
+** Iterates the list @lst and applies the function @f to each link.            |
 ** -----------------------------------------------------------------------------
 */
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	t_list *next;
+	t_list	*ptr;
 
-	while ((*alst))
+	ptr = lst;
+	while (ptr)
 	{
-		next = (*alst)->next;
-		ft_lstdelone(alst, del);
-		*alst = next;
+		f(ptr);
+		ptr = ptr->next;
 	}
-	*alst = NULL;
 }

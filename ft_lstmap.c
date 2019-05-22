@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 04:06:03 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/22 02:55:39 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/05/22 04:58:38 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/05/22 05:08:48 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 /*
 ** -----------------------------------------------------------------------------
-** clears all the linked list after applying @del to them                      |
+** creates a new list pointer and save the result of the function mapping in it|
+** then link its next to the new new resulting @new pointer (recursivly)       |
 ** -----------------------------------------------------------------------------
 */
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list *next;
+	t_list	*new;
 
-	while ((*alst))
+	if (lst)
 	{
-		next = (*alst)->next;
-		ft_lstdelone(alst, del);
-		*alst = next;
+		new = f(lst);
+		new->next = ft_lstmap(lst->next, f);
+		return (new);
 	}
-	*alst = NULL;
+	return (NULL);
 }
