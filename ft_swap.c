@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 03:40:09 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/24 23:45:22 by aelouazz         ###   ########.fr       */
+/*   Created: 2019/03/26 21:48:05 by aelouazz          #+#    #+#             */
+/*   Updated: 2019/05/23 01:23:05 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_swap(int *a, int *b)
 {
-	if (!alst || !del)
-		return ;
-	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	int x;
+
+	x = *a;
+	*a = *b;
+	*b = x;
 }

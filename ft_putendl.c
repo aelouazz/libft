@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 23:53:28 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/19 23:55:07 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/24 23:38:56 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putendl(char const *s)
 {
+	if (!s)
+		return ;
 	ft_putendl_fd(s, 1);
 }

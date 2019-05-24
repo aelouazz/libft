@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 02:44:29 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/22 04:58:04 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/24 23:53:00 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	t_list	*ptr;
 
+	if (!lst || !f)
+		return ;
 	ptr = lst;
 	while (ptr)
 	{

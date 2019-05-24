@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 01:55:37 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/22 02:09:58 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/24 23:51:43 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
+	if (!new || !alst)
+		return ;
 	new->next = *alst;
 	*alst = new;
 }

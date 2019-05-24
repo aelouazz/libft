@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 02:33:35 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/22 05:06:37 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/23 01:23:07 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					ft_recursive_factorial(int nb);
+int					ft_sqrt(int nb);
+void				ft_swap(int *a, int *b);
 
 /*
 ** -----------------------------------------------------------------------------

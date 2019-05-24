@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 02:01:05 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/21 03:35:51 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/24 23:44:10 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 	else
 	{
 		if (!(list->content = ft_memalloc(content_size)))
+		{
+			free(list);
 			return (NULL);
+		}
 		ft_memmove(list->content, content, content_size);
 		list->content_size = content_size;
 	}

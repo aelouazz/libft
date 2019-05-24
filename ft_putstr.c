@@ -6,7 +6,7 @@
 /*   By: aelouazz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/19 23:51:31 by aelouazz          #+#    #+#             */
-/*   Updated: 2019/05/19 23:52:55 by aelouazz         ###   ########.fr       */
+/*   Updated: 2019/05/24 23:38:27 by aelouazz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
+	if (!s)
+		return ;
 	ft_putstr_fd(s, 1);
 }
